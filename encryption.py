@@ -94,7 +94,7 @@ def writeImage(image_path, binary_string, output_image_path, length_bits=64):
 	if len(binary_array) > len(flat_image_array[:len(binary_array)]):
 		raise ValueError("Binary string is too long to fit in the image")
 
-	flat_image_array[:len(binary_array)] = (flat_image_array[:len(binary_array)] & ~1) | binary_array
+	flat_image_array[:len(binary_array)] = (flat_image_array[:len(binary_array)] & 0xFE) | binary_array
 	image_array = flat_image_array.reshape(image_array.shape)
 	
 	edited_image = Image.fromarray(image_array)
@@ -124,3 +124,7 @@ def read(password: str):
 	plaintext = decrypt(password, encryptedData)
 
 	return plaintext
+
+if __name__ == "__main__":
+	if input("Are you sure you want to overwrite your password data? (Must type 'Yes'): ") == "Yes":
+		write(input("Type your password: "), "");

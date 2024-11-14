@@ -33,13 +33,17 @@ A comprehensive password management application built with a custom Pygame-based
     python main.py
     ```
 
-2. **Create a New Password**: Click the '+' button, fill in fields, and save.
+2. **Select image to store data:** Add an image to the directory and name it `image.png`.
 
-3. **Load Encrypted Data**: Enter the correct password and press 'Decrypt' to view stored data.
+3. **Set master password:** Run `encryption.py` to set the image up with a master password.
 
-4. **Random Passwords**: Click the randomize button to generate a secure password instantly.
+4. **Load Encrypted Data**: Run `main.py` and enter the correct password and press `Enter` to view stored data.
 
-5. **Copy to Clipboard**: Click the copy icon next to a field to quickly copy information.
+5. **Create a New Password**: Click the '+' button, fill in fields, and save.
+
+6. **Random Passwords**: Click the randomize button to generate a secure password instantly.
+
+7. **Copy to Clipboard**: Click the copy icon next to a field to quickly copy information.
 
 ## **Security Details**
 - **AES-GCM with PBKDF2-HMAC**: The application derives encryption keys using PBKDF2-HMAC with SHA256, and securely encrypts passwords.
